@@ -58,22 +58,22 @@ export default function Login() {
 
     return (
         <>
-            {token && <Navigate replace to="/listado"/>}
+            {token && <Navigate replace to="/listado" />}
             <div className="row">
-                <h2>Formulario de Login</h2>
-                <form onSubmit={submitHandler}>
-                    <label>
-                        <span>Correo Electronico:</span><br />
-                        <input type="email" name="email"></input>
-                    </label>
-                    <br />
-                    <label>
-                        <span>Contraseña:</span><br />
-                        <input type="password" name="password"></input>
-                    </label>
-                    <br />
-                    <button type="submit">Ingresar</button>
-                </form>
+                <div className="col-md-6 offset-md-3">
+                    <h2 className="mb-4">Formulario de Login</h2>
+                    <form onSubmit={submitHandler}>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Correo Electrónico:</label>
+                            <input type="email" className="form-control" id="email" name="email" required />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="password" className="form-label">Contraseña:</label>
+                            <input type="password" className="form-control" id="password" name="password" required />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Ingresar</button>
+                    </form>
+                </div>
             </div>
         </>
     )

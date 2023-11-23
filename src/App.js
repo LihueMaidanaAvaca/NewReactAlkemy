@@ -6,17 +6,19 @@ import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 
 import './css/bootstrap.min.css'
- 
+
 export default function App() {
   return (
-    <div className='container mt-3'>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<Login/>} />
-        <Route path='/listado' element={<Listado/>} />
-      </Routes>
-      <Footer/>
-    </div>
+    <>
+      <Header />
+      <div className='container mt-3'>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/listado' element={<Listado />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
   );
 }
 

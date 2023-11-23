@@ -24,15 +24,14 @@ export default function Listado() {
         <>
             {!token && <Navigate replace to="/" />}
             <div className='row'>
-                { }
                 {moviesList.map((oneMovie, idx) => {
                     return (
-                        <div className='col-3' >
-                            <div className="card" >
-                                <img src="..." className="card-img-top" alt="..." />
+                        <div className='col-3' key={idx}>
+                            <div className="card mt-4" >
+                                <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} alt={idx} className="card-img-top"  />
                                 <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 className="card-title">{ oneMovie.title }</h5>
+                                    <p className="card-text">{ oneMovie.overview.substring(0, 98) }</p>
                                     <Link to="/" className="btn btn-primary">Go somewhere</Link>
                                 </div>
                             </div>
