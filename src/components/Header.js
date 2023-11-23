@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+
+import '../css/bootstrap.min.css'
  
 export default function Header(){
     return (
@@ -12,7 +14,7 @@ export default function Header(){
                         <Link to='/listado'>Listado</Link> 
                     </li>
                     <li>
-                        <Link to='/listado'>Contacto</Link> 
+                        <Link to='/contacto'>Contacto</Link> 
                     </li>
                 </ul>
             </nav>
