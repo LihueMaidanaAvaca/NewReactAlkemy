@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Login from './components/Login.js'
 import Listado from './components/Listado.js';
+import Detalle from './components/Detalle.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 
@@ -15,6 +16,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/listado' element={<Listado />} />
+          <Route path='/detalle' element={<Detalle />} />
         </Routes>
       </div>
       <Footer />

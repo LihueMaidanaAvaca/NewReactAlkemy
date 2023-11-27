@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 import '../css/bootstrap.min.css'
 
 export default function Listado() {
     let token = localStorage.getItem('token');
 
+    
     const [moviesList, setMoviesList] = useState([])
-
+    
     useEffect(() => {
         const endPoint = 'https://api.themoviedb.org/3/discover/movie?api_key=226e91d53a26153ddaf84f29c7897096';
         axios.get(endPoint)
-            .then(response => {
-                const apiData = response.data;
-                setMoviesList(apiData.results)
+        .then(response => {
+            const apiData = response.data;
+            setMoviesList(apiData.results)
+        })
+        .catch(error => {
+                const MySwal = withReactContent(Swal)
+                new MySwal(
+                    <span>Hubo errores, intenta mas tarde</span>
+                )
             })
     }, [setMoviesList]);
 
@@ -32,7 +41,7 @@ export default function Listado() {
                                 <div className="card-body">
                                     <h5 className="card-title">{ oneMovie.title }</h5>
                                     <p className="card-text">{ oneMovie.overview.substring(0, 98) }</p>
-                                    <Link to="/" className="btn btn-primary">Go somewhere</Link>
+                                    <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">View detail</Link>
                                 </div>
                             </div>
                         </div>
