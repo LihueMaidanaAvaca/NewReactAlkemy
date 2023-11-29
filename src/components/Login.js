@@ -49,12 +49,12 @@ export default function Login() {
             .then(res => {
                 new MySwal(<span>Perfecto, ingresaste perfectamente</span>)
                 const token = res.data.token;
-                localStorage.setItem("token", token);
+                sessionStorage.setItem("token", token);
                 history('/listado')
             })
     }
 
-    let token = localStorage.getItem('token')
+    let token = sessionStorage.getItem('token')
 
     return (
         <>

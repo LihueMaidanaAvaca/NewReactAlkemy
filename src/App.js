@@ -12,6 +12,7 @@ export default function App() {
   return (
     <>
       <Header />
+      
       <div className='container mt-3'>
         <Routes>
           <Route path='/' element={<Login />} />
@@ -19,6 +20,7 @@ export default function App() {
           <Route path='/detalle' element={<Detalle />} />
         </Routes>
       </div>
+
       <Footer />
     </>
   );
