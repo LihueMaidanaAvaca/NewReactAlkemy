@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Buscador from './Buscador.js';
 
 import '../css/bootstrap.min.css'
 
@@ -21,6 +22,7 @@ export default function Header() {
                             </li>
                         </ul>
                     </div>
+                    <Buscador/>
                 </div>
             </nav>
         </header>
