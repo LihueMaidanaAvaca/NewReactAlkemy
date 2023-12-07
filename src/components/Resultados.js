@@ -20,7 +20,7 @@ export default function Resultados() {
                     const MySwal = withReactContent(Swal);
                     new MySwal(
                         <span>Tu búsqueda no tuvo resultados</span>
-                    );
+                        );
                 }
                 setMoviesResults(moviesArray);
             })
@@ -30,6 +30,9 @@ export default function Resultados() {
     return (
         <>
             <h2>Buscaste: <em>{keyword}</em></h2>
+
+            {moviesResults.length === 0 && <h3>No hay resultados</h3>}
+
             <div className='row'>
                 {moviesResults.map((oneMovie, idx) => (
                     <div className='col-3' key={idx}>
