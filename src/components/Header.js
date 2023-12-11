@@ -3,7 +3,7 @@ import Buscador from './Buscador.js';
 
 import '../css/bootstrap.min.css'
 
-export default function Header() {
+export default function Header(props) {
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,7 +18,14 @@ export default function Header() {
                                 <Link className="nav-link" to='/listado'>Listado</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to='/contacto'>Contacto</Link>
+                                <Link className="nav-link" to='/favoritos'>Favoritos</Link>
+                            </li>
+                            <li className="nav-item d-flex align-items-center">
+                                <span className='text-success'>
+                                    {
+                                        props.favorites.length > 0 && <>Peliculas en favoritas: {props.favorites.length}</>
+                                    }                                    
+                                </span>
                             </li>
                         </ul>
                     </div>
